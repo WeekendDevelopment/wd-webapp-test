@@ -16,10 +16,12 @@
         "@wdio/spec-reporter": "^7.25.4",
         "chromedriver": "^107.0.2",
         "cucumber": "^6.0.7",
+        "mocha": "^10.1.0",
         "pactum": "^3.2.3",
         "wdio-chromedriver-service": "^8.0.0"
     },
     "scripts": {
-        "wdio": "wdio run wdio.conf.js"
+        "wdio": "wdio run wdio.conf.js",
+        "test": "mocha ./features/API/apitest.js"
     }
 }
