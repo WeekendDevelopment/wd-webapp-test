@@ -2,15 +2,15 @@ const { spec } = require('pactum');
 
 it('should check api health', async () => {
   await spec()
-    .get('http://3.110.159.152:8080/wd-webapp/health')
+    .get('https://e-paratext-367610.el.r.appspot.com/health') 
     //.post('https://the-internet.herokuapp.com/login')
     .expectBodyContains('UP')
     .expectStatus(200)
-});
+}).timeout(10000);;
 
 it('should verify credentials', async () => {
   await spec()
-    .post('http://3.110.159.152:8080/wd-webapp/login')
+    .post('https://e-paratext-367610.el.r.appspot.com/login')
     //.post('https://the-internet.herokuapp.com/login')
     .withJson({
       "username":"admin",
@@ -18,7 +18,7 @@ it('should verify credentials', async () => {
   })
     .expectBodyContains('Success')
     .expectStatus(200)
-});
+}).timeout(10000);;
 
 
 
